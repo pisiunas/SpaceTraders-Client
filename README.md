@@ -1,4 +1,4 @@
-# SpaceTraders-Client
+# SpaceTraders-Client WIP
 
 VERY GOOD CLIENT
 
