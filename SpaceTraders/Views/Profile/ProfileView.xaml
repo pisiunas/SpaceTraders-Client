@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="SpaceTraders.Views.Profile.ProfileView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Height="760" Width="1560"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:profile="clr-namespace:SpaceTraders.ViewModels.Profile"
+             xmlns:cm="http://caliburnmicro.com"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             Background="{DynamicResource MaterialDesignPaper}"
+             TextElement.FontWeight="Medium"
+             TextElement.FontSize="14"
+             FontFamily="{materialDesign:MaterialDesignFont}"
+             d:DataContext="{d:DesignInstance profile:ProfileViewModel}"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="UserInfoContentTextBox"
+               TargetType="TextBlock">
+            <Setter Property="Margin"
+                    Value="10, 8, 0, 0" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="2"
+                        Margin="0,8,8,8"
+                        HorizontalAlignment="Left"
+                        Content="Back" 
+                        cm:Message.Attach="[Event Click] = [Action NavigateBackToMainView]"/>
+                <Image Grid.Column="0" Grid.Row="1"
+                       Margin="8, 10, 0, 0"
+                       Height="250"
+                       VerticalAlignment="Top"
+                       Source="Assets/CommanderPortrait.jpg" />
+                <StackPanel Grid.Column="1" Grid.Row="1"
+                            Margin="10, 0, 0, 0">
+                    <TextBlock Margin="0, 8, 0, 0"
+                               Text="Account ID" />
+                    <TextBlock Text="{Binding AccountId}"></TextBlock>
+                    <TextBlock Margin="0, 8, 0, 0"
+                               Text="Agent Name"></TextBlock>
+                    <TextBlock Text="{Binding AgentName}"/>
+                    <TextBlock Margin="0, 8, 0, 0"
+                               Text="Headquarters"></TextBlock>
+                    <TextBlock Text="{Binding Headquarters}"/>
+                    <TextBlock Margin="0, 8, 0, 0"
+                               Text="Credits"></TextBlock>
+                    <TextBlock Text="{Binding Credits}"/>
+                    <TextBlock Margin="0, 8, 0, 0"
+                               Text="Starting Faction"></TextBlock>
+                    <TextBlock Text="{Binding StartingFaction}"/>
+                    <TextBlock Margin="0, 8, 0, 0"
+                               Text="Owned Ships"></TextBlock>
+                    <TextBlock Text="{Binding ShipCount}"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

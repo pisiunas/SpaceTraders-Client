@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="SpaceTraders.Views.HomePage.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cm="http://caliburnmicro.com"
+             mc:Ignorable="d"
+             Height="760" Width="1560"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:homePage="clr-namespace:SpaceTraders.ViewModels.HomePage"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             Background="{DynamicResource MaterialDesignPaper}"
+             TextElement.FontWeight="Medium"
+             TextElement.FontSize="14"
+             FontFamily="{materialDesign:MaterialDesignFont}"
+             d:DataContext="{d:DesignInstance homePage:HomePageViewModel}">
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="2"
+                       Margin="8,8,8,8"
+                       VerticalAlignment="Bottom"
+                       Background="DarkGreen"
+                       Text="{Binding ServerStatusText}" />
+            <StackPanel Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="1"
+                            Margin="8,8,8,8"
+                            HorizontalAlignment="Left"
+                            Content="Profile" 
+                            cm:Message.Attach="[Event Click] = [Action OpenProfileView]"/>
+                    <Button Grid.Column="2"
+                            Margin="0,8,8,8"
+                            HorizontalAlignment="Left"
+                            Content="Settings" />
+                </Grid>
+            </StackPanel>
+    </Grid>
+</UserControl>

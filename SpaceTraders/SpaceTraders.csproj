@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <TargetFramework>net7.0-windows</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="8.0.0" />
+      <PackageReference Include="Caliburn.Micro" Version="4.0.212" />
+      <PackageReference Include="MaterialDesignColors" Version="3.0.0-ci552" />
+      <PackageReference Include="MaterialDesignThemes" Version="5.0.0-ci552" />
+      <PackageReference Include="MaterialDesignThemes.MahApps" Version="3.0.0-ci552" />
+      <PackageReference Include="MediatR" Version="12.2.0" />
+      <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
+      <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="12.0.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="NLog" Version="5.2.8" />
+      <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
+      <PackageReference Include="Refit" Version="7.0.0" />
+      <PackageReference Include="ShowMeTheXAML.AvalonEdit" Version="2.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SpaceTraders.Infrastructure\SpaceTraders.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="SpaceTradersConfig.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Navigation\ProfileWindow" />
+      <Folder Include="ViewModels\Settings" />
+      <Folder Include="Views\Settings" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Views\Profile\Assets\CommanderPortrait.jpg" />
+      <Resource Include="Views\Profile\Assets\CommanderPortrait.jpg" />
+    </ItemGroup>
+
+</Project>
