@@ -8,6 +8,7 @@
              Height="760" Width="1560"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:homePage="clr-namespace:SpaceTraders.ViewModels.HomePage"
+             xmlns:navigationGrid="clr-namespace:SpaceTraders.Views.NavigationGrid"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
              Background="{DynamicResource MaterialDesignPaper}"
              TextElement.FontWeight="Medium"
@@ -43,5 +44,16 @@
                             Content="Settings" />
                 </Grid>
             </StackPanel>
+            
+            <Border Grid.Row="1" 
+                    Width="500" 
+                    Height="500" 
+                    BorderBrush="White" 
+                    BorderThickness="1"
+                    HorizontalAlignment="Left"
+                    Margin="8,0, 0, 0">
+                <ContentControl x:Name="NavigationGrid"
+                                Grid.Column="2" />
+            </Border>
     </Grid>
 </UserControl>

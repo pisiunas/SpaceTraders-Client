@@ -9,5 +9,6 @@ public class ApiModule : Module
     {
         builder.RegisterApiClient<IServerInformationApi>();
         builder.RegisterApiClient<IAuthenticationApi>();
+        builder.RegisterApiClient<ISystemsApi>();
     }
 }

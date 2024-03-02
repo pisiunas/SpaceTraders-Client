@@ -5,11 +5,11 @@ namespace SpaceTraders.Infrastructure.Api.Models.Authentication;
 public sealed record RegistrationRequest(string Faction, string AgentName, string Email)
 {
     [JsonPropertyName("faction")]
-    public string Faction { get; set; } = Faction;
+    public string Faction { get; } = Faction;
 
     [JsonPropertyName("symbol")]
-    public string AgentName { get; set; } = AgentName;
+    public string AgentName { get; } = AgentName;
 
     [JsonPropertyName("email")]
-    public string Email { get; set; } = Email;
+    public string Email { get; } = Email;
 }

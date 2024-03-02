@@ -31,12 +31,12 @@ public class ProfileViewModel : Screen
     {
         var response = _authenticationApi.GetAgent(cancellationToken);
 
-        AccountId = response.Result.Agent.AccountId;
-        AgentName = response.Result.Agent.AgentName;
-        Headquarters = response.Result.Agent.Headquarters;
-        Credits = response.Result.Agent.Credits;
-        StartingFaction = response.Result.Agent.StartingFaction;
-        ShipCount = response.Result.Agent.ShipCount;
+        AccountId = response.Result.Data.AccountId;
+        AgentName = response.Result.Data.Symbol;
+        Headquarters = response.Result.Data.Headquarters;
+        Credits = response.Result.Data.Credits;
+        StartingFaction = response.Result.Data.StartingFaction;
+        ShipCount = response.Result.Data.ShipCount;
         
         return base.OnInitializeAsync(cancellationToken);
     }

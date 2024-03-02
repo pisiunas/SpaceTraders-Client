@@ -1,6 +1,6 @@
 ﻿using Refit;
 using SpaceTraders.Infrastructure.Api.Models;
-using SpaceTraders.Infrastructure.Api.Models.ServerInformation;
+using SpaceTraders.Infrastructure.Modules.Responses.ServerInformation;
 
 namespace SpaceTraders.Infrastructure.Api.Calls;
 

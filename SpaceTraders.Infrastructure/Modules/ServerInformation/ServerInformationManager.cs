@@ -2,6 +2,7 @@
 using SpaceTraders.Infrastructure.Api.Calls;
 using SpaceTraders.Infrastructure.Interfaces;
 using SpaceTraders.Infrastructure.Messaging.Interfaces;
+using SpaceTraders.Infrastructure.Modules.Responses.ServerInformation;
 using SpaceTraders.Infrastructure.Modules.ServerInformation.Messages;
 
 namespace SpaceTraders.Infrastructure.Modules.ServerInformation;
@@ -17,17 +18,13 @@ public class ServerInformationManager : IServerInformationManager, IOnStartup
         _messagePublisher = messagePublisher;
     }
 
-    public ServerInformation GetServerInformation()
+    public ServerInformationResponse GetServerInformation()
     {
-        var response = _serverInformationApi.GetServerStatus(CancellationToken.None);
+        Task<ServerInformationResponse> response = _serverInformationApi.GetServerStatus(CancellationToken.None);
 
-        var serverInfo = new ServerInformation(response.Result.Status, response.Result.Version, response.Result.ResetDate,
-            response.Result.Description, response.Result.StatsList.Agents, response.Result.StatsList.Ships,
-            response.Result.StatsList.Systems, response.Result.StatsList.Waypoints);
+        _messagePublisher.Publish(new ServerInfoUpdated(response.Result), CancellationToken.None);
 
-        _messagePublisher.Publish(new ServerInfoUpdated(serverInfo), CancellationToken.None);
-
-        return serverInfo;
+        return response.Result;
     }
 
     public Task Handle(ServerInfoRequested notification, CancellationToken cancellationToken)

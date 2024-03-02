@@ -1,6 +1,6 @@
 ﻿using Refit;
 using SpaceTraders.Infrastructure.Api.Models.Authentication;
-using SpaceTraders.Infrastructure.Modules.Authentication.UserInformation;
+using SpaceTraders.Infrastructure.Modules.Responses.UserInformation;
 
 namespace SpaceTraders.Infrastructure.Api.Calls;
 

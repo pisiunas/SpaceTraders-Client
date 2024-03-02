@@ -1,6 +1,8 @@
-﻿namespace SpaceTraders.Infrastructure.Modules.ServerInformation;
+﻿using SpaceTraders.Infrastructure.Modules.Responses.ServerInformation;
+
+namespace SpaceTraders.Infrastructure.Modules.ServerInformation;
 
 public interface IServerInformationManager
 {
-    ServerInformation GetServerInformation();
+    ServerInformationResponse GetServerInformation();
 }

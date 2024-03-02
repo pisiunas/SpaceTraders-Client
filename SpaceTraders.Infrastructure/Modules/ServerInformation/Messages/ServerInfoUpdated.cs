@@ -1,8 +1,9 @@
 ﻿using MediatR;
+using SpaceTraders.Infrastructure.Modules.Responses.ServerInformation;
 
 namespace SpaceTraders.Infrastructure.Modules.ServerInformation.Messages;
 
-public sealed record ServerInfoUpdated(ServerInformation ServerInformation) : INotification
+public sealed record ServerInfoUpdated(ServerInformationResponse ServerInformation) : INotification
 {
-    public ServerInformation ServerInformation { get; } = ServerInformation;
+    public ServerInformationResponse ServerInformation { get; } = ServerInformation;
 }

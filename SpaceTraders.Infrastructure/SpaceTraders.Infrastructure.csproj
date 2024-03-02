@@ -16,4 +16,10 @@
       <PackageReference Include="Refit" Version="7.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Api\Models\ServerInformation\" />
+      <Folder Include="Modules\Responses\FactionsInformation\" />
+      <Folder Include="Modules\Responses\WaypointsInformation\" />
+    </ItemGroup>
+
 </Project>
